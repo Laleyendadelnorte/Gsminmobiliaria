@@ -2,6 +2,8 @@
 
 Destino solicitado: [Laleyendadelnorte/Gsminmobiliaria](https://github.com/Laleyendadelnorte/Gsminmobiliaria), rama `main`. El nombre se conserva exactamente. La inspección inicial del 25-11-2026 encontró un repositorio público vacío y ningún historial Git en la raíz de origen. No se cambia la visibilidad. El resultado de la publicación y su SHA se entregan en el informe final; este documento no prueba por sí mismo un push.
 
+**Publicación verificada:** el commit inicial `f228e87675a7d0719daa395edbf86a9dab2b6ef9` llegó a `main`; el SHA remoto coincidió y el clon limpio desde GitHub pasó el manifiesto. La [ejecución de CI 45640217082](https://github.com/Laleyendadelnorte/Gsminmobiliaria/actions/runs/45640217082) terminó correctamente. Los commits posteriores de documentación conservan ese historial; use `git log -1` y `git ls-remote origin refs/heads/main` para comprobar la revisión actual.
+
 ## Inventario exportable
 
 | Componente existente | Archivos principales |

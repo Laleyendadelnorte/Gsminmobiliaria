@@ -17,7 +17,8 @@ Aplicación de desarrollo con información ficticia. Node 24.22.3, Next.js 16.4.
 | Reinicio del servicio | PASS: fingerprint de 10 tablas idéntico antes/después, health ready y navegador nuevo autenticado |
 | IA con proveedor externo | BLOQUEADO, sin clave; no ejecución real del LLM |
 | Pasarela bancaria/tarjetas/reembolsos reales | BLOQUEADO; adapter sandbox solamente |
-| Docker/Compose y GitHub Actions en sus plataformas | Archivos preparados, NO ejecutados; no se declara PASS |
+| Docker/Compose en su plataforma | Archivos preparados, NO ejecutados; no se declara PASS |
+| GitHub Actions | PASS tras publicar; ver actualización de exportación al final |
 
 El conjunto de 48 pruebas incluye 22 de IA, 20 backend y 6 medios (contando los tests padre de integración en la numeración del runner). Los tres conjuntos usan PostgreSQL real, transacciones y bases desechables. Se verifican rollback, idempotencia, aislamiento, autorizaciones, CSV, conservación de PATCH, coincidencias cero/parciales, versiones, publicación y slug, reservas concurrentes, importes manipulados, firma y replay, asistencia, reembolso, ledger inmutable y revocación de medios.
 
@@ -48,4 +49,10 @@ Transporte HTTP loopback; aplicación y PostgreSQL en la misma máquina de 4 GB.
 
 Se verificó persistencia real de perfil, preferencias, selección, tema, slug, borrador y garantía, publicación humana y portal privado. **La aceptación V2 con IA externa no está completada**: OpenRouter no pudo emitir una clave porque Solid respondió `403 full_access_not_enabled`. El modo determinista es una alternativa funcional limitada y está claramente identificado. No hubo financiación exitosa ni se simulan llamadas a un modelo.
 
-La matriz `requisitos.md` detalla otros componentes parciales: documentos, tareas completas, versión/reversión en UI, wildcard, OTP/correo, transferencias manuales, proveedores/colas de entrega, retención y revisión legal. No se ha publicado GitHub ni desplegado producción.
+La matriz `requisitos.md` detalla otros componentes parciales: documentos, tareas completas, versión/reversión en UI, wildcard, OTP/correo, transferencias manuales, proveedores/colas de entrega, retención y revisión legal. La exportación posterior a GitHub está verificada; no se ha desplegado producción.
+
+## Actualización de exportación a GitHub
+
+El commit de exportación inicial `f228e87675a7d0719daa395edbf86a9dab2b6ef9` se publicó en `main` de [Laleyendadelnorte/Gsminmobiliaria](https://github.com/Laleyendadelnorte/Gsminmobiliaria), conservando su visibilidad pública. Se comparó el SHA remoto y se hizo un clon limpio desde GitHub con verificación completa de `MANIFEST.sha256`.
+
+[GitHub Actions — ejecución 45640217082](https://github.com/Laleyendadelnorte/Gsminmobiliaria/actions/runs/45640217082) terminó con resultado **success**: instalación, migraciones PostgreSQL, lint, TypeScript, pruebas y build. Esta comprobación se suma a la instalación aislada documentada en `evidence/export-validation.json`; las limitaciones de ese JSON describen la fase previa al push. La revisión posterior solo actualiza documentación y evidencia de publicación.

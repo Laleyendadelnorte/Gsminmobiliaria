@@ -1,0 +1,22 @@
+{
+  "verifiedAt": "2026-11-25T15:02:31.848498+00:00",
+  "repository": "https://github.com/Laleyendadelnorte/Gsminmobiliaria",
+  "branch": "main",
+  "initialExportCommit": "f228e87675a7d0719daa395edbf86a9dab2b6ef9",
+  "remoteMatchesInitialCommit": true,
+  "cleanCloneFromGitHub": true,
+  "manifestCheck": "PASS",
+  "initialTrackedFiles": 110,
+  "githubActions": {
+    "runId": 45640217082,
+    "url": "https://github.com/Laleyendadelnorte/Gsminmobiliaria/actions/runs/45640217082",
+    "conclusion": "success",
+    "tests": 48,
+    "passed": 48,
+    "failed": 0,
+    "skipped": 0
+  },
+  "productionDeployed": false,
+  "realDataMigrated": false,
+  "visibilityChanged": false
+}

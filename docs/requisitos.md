@@ -39,7 +39,7 @@
 | Backups cifrados/restauración y persistencia | age/pg_dump/systemd | IMPLEMENTADO: cifrado y restauración real probados; copias externas y recuperación de máquina completa pendientes |
 | 10k propiedades/10k prospectos/20k ofertas/100 sesiones | diseño/índices | IMPLEMENTADO como benchmark de lectura: 100 sesiones, 400 solicitudes válidas, dataset objetivo y 60k selecciones; no prueba sostenida de escrituras/IA/pagos |
 | LCP ≤2.5 s | prueba de rendimiento descrita en evidencias | Mediana móvil 2.468 s (tres muestras 2.228–2.964 s), CPU 4× y red emulada; no garantía en todas las cargas |
-| Exportación/documentación/GitHub | ZIP, README, docs y workflow | IMPLEMENTADO como exportable; sin publicación ni despliegue de producción |
+| Exportación/documentación/GitHub | ZIP, README, docs, repositorio y workflow | IMPLEMENTADO; publicación en main y GitHub Actions verificados; sin despliegue de producción |
 
 ## Cierre de la fase siguiente
 
