@@ -1,0 +1,33 @@
+name: CI
+on: [push, pull_request]
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:17
+        env:
+          POSTGRES_USER: gcm
+          POSTGRES_PASSWORD: ci-isolated-test-only
+          POSTGRES_DB: gcm_test
+        ports: [5432:5432]
+        options: --health-cmd "pg_isready -U gcm -d gcm_test" --health-interval 5s --health-timeout 5s --health-retries 10
+    env:
+      DATABASE_URL: postgresql://gcm:ci-isolated-test-only@localhost:5432/gcm_test
+      APP_URL: http://localhost:3000
+      SESSION_SECRET: isolated-ci-only-session-secret-not-for-deployment
+      WEBHOOK_SECRET: isolated-ci-only-webhook-secret-not-for-deployment
+      NEXT_TELEMETRY_DISABLED: 1
+      RUN_BACKEND_INTEGRATION: true
+      AI_INTEGRATION_TEST: 1
+      MEDIA_INTEGRATION_TEST: 1
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: 24, cache: npm}
+      - run: npm ci
+      - run: npm run db:migrate
+      - run: npm run lint
+      - run: npm run typecheck
+      - run: npm test
+      - run: npm run build

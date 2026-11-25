@@ -1,0 +1,5 @@
+import './env';
+import bcrypt from 'bcryptjs';
+import {db,transaction} from '../src/server/db';
+async function main(){const email=process.env.RESET_EMAIL,password=process.env.RESET_PASSWORD;if(!email||!password||password.length<16)throw new Error('Set RESET_EMAIL and a random RESET_PASSWORD of at least 16 characters through a protected environment file.');const hash=await bcrypt.hash(password,12);await transaction(async c=>{const{rows:[u]}=await c.query('UPDATE users SET password_hash=$2 WHERE lower(email)=lower($1) RETURNING id',[email,hash]);if(!u)throw new Error('User not found');await c.query('DELETE FROM sessions WHERE user_id=$1',[u.id]);await c.query("INSERT INTO audit_logs(organization_id,actor_id,action,entity_type,entity_id) SELECT organization_id,$1,'PASSWORD_RESET_BY_OPERATOR','user',$1 FROM memberships WHERE user_id=$1",[u.id]);});console.log('Password reset and sessions revoked. No credentials logged.');}
+main().catch(e=>{console.error(e.message);process.exitCode=1}).finally(()=>db.end());

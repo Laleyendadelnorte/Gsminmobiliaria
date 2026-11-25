@@ -1,0 +1,18 @@
+import {chromium} from 'playwright-core';
+import {readFile,writeFile} from 'node:fs/promises';
+import assert from 'node:assert/strict';
+const access=process.env.GCM_ACCESS_URL;if(!access)throw new Error('GCM_ACCESS_URL required');
+const browser=await chromium.launch({executablePath:process.env.CHROMIUM_PATH||'/usr/bin/chromium',headless:true,proxy:process.env.BROWSER_PROXY?{server:process.env.BROWSER_PROXY}:undefined,args:['--no-sandbox','--disable-dev-shm-usage']});
+try{
+ const context=await browser.newContext({viewport:{width:1440,height:1000}});const page=await context.newPage();await page.goto(access);await page.getByRole('heading',{name:'Todo comienza con una buena conexión.'}).waitFor();
+ const call=async(path:string,body?:unknown)=>page.evaluate(async({path,body})=>{const r=await fetch('/api/'+path,{method:body?'POST':'GET',headers:body?{'Content-Type':'application/json'}:{},body:body?JSON.stringify(body):undefined});if(!r.ok)throw new Error('Gallery QA API '+r.status);return r.json()},{path,body});
+ const code='QA-MEDIA-'+Date.now();const p=await call('properties',{code,title:'Prueba técnica de medios · no publicar',type:'CASA',status:'BORRADOR',priceMinor:100,currency:'DOP'});
+ await page.goto((process.env.APP_URL||'http://localhost:3000')+'/?section=propiedades');await page.getByLabel('Buscar propiedades').fill(code);await page.getByRole('button',{name:'Ver '+p.title,exact:true}).click();await page.getByRole('button',{name:'Editar',exact:true}).click();
+ await page.locator('input[type=file]').setInputFiles([{name:'front.webp',mimeType:'image/webp',buffer:await readFile('public/images/house-1-960.webp')},{name:'inside.webp',mimeType:'image/webp',buffer:await readFile('public/images/house-2-960.webp')}]);
+ await page.locator('.gallery-edit-row').nth(1).waitFor({timeout:90000});await page.getByLabel('Texto alternativo de imagen 1',{exact:true}).fill('Fachada de prueba');await page.getByLabel('Texto alternativo de imagen 2',{exact:true}).fill('Interior de prueba');await page.getByRole('button',{name:'Subir imagen 2',exact:true}).click();await page.getByRole('button',{name:'Guardar ficha',exact:true}).click();await page.getByText('Ficha guardada correctamente.').waitFor();
+ const stored=await call('properties/'+p.id);assert.equal(stored.media.length,2);assert.deepEqual(stored.media.map((m:any)=>m.alt),['Interior de prueba','Fachada de prueba']);
+ await page.getByRole('button',{name:'Ver '+p.title,exact:true}).click();await page.getByRole('button',{name:'Editar',exact:true}).click();await page.screenshot({path:'artifacts/gallery-1440.png',fullPage:true});
+ page.once('dialog',d=>d.accept());await page.getByRole('button',{name:'Retirar imagen 1',exact:true}).click();await page.getByRole('button',{name:'Guardar ficha',exact:true}).click();await page.getByText('Ficha guardada correctamente.').waitFor();const saved=await call('properties/'+p.id);assert.equal(saved.media.length,1);assert.equal(saved.media[0].id,stored.media[1].id);assert.equal(saved.media[0].alt,'Fachada de prueba');
+ const response=await page.evaluate(async url=>{const r=await fetch(url);return{status:r.status,type:r.headers.get('content-type'),bytes:(await r.arrayBuffer()).byteLength}},saved.media[0].url);assert.equal(response.status,200);assert.equal(response.type,'image/webp');assert.ok(response.bytes>1000);
+ await writeFile('artifacts/gallery.json',JSON.stringify({date:new Date().toISOString(),status:'PASS',propertyId:p.id,uploaded:2,retained:1,checks:['real upload','keyboard reorder','alt persisted','remove on save','stable uploaded id','authenticated image read']},null,2));console.log('PASS upload, reorder, alt, remove and persisted private media');
+}finally{await browser.close()}

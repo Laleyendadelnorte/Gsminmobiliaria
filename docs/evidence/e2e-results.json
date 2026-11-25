@@ -1,0 +1,64 @@
+{
+  "date": "2026-11-25T02:08:05.386Z",
+  "browser": "Chromium (CloakBrowser unavailable without license)",
+  "base": "https://gcm-inmobiliaria-5g2582m.solid.site",
+  "results": [
+    {
+      "name": "Unauthenticated data denied; invalid development credential rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "Exact private access URL opens dashboard and clears fragment",
+      "status": "PASS"
+    },
+    {
+      "name": "All nine admin sections render without horizontal overflow at 390,768,1024,1440",
+      "status": "PASS",
+      "detail": {
+        "widths": [
+          390,
+          768,
+          1024,
+          1440
+        ],
+        "sections": 9
+      }
+    },
+    {
+      "name": "Property form creates a persistent record and PATCH preserves omitted fields",
+      "status": "PASS"
+    },
+    {
+      "name": "Invalid upload rejected with controlled error",
+      "status": "PASS"
+    },
+    {
+      "name": "Single instruction persists Alejandro, preferences, three real matches and private draft (deterministic mode)",
+      "status": "PASS"
+    },
+    {
+      "name": "Human approves publication; private link created",
+      "status": "PASS"
+    },
+    {
+      "name": "Separate client browser authorized; internal fields absent; favorites persist",
+      "status": "PASS"
+    },
+    {
+      "name": "Visit request, explicit terms, sandbox client payment, attendance and idempotent refund",
+      "status": "PASS"
+    },
+    {
+      "name": "Paused/revoked invitation denies client; guessed IDs denied",
+      "status": "PASS"
+    },
+    {
+      "name": "Reusable administrator invitation works in second fresh context",
+      "status": "PASS"
+    },
+    {
+      "name": "No browser runtime errors",
+      "status": "PASS"
+    }
+  ]
+}

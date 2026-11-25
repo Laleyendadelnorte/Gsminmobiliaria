@@ -1,0 +1,57 @@
+{
+  "date": "2026-11-25T02:09:56.813Z",
+  "status": "PASS",
+  "health": "ready",
+  "tables": [
+    {
+      "table": "properties",
+      "count": 18,
+      "sha256": "e6a6c706b9e9604bb6a38023b75d49d8c529cb1872e7a6e8201e3e2bbd60ef5a"
+    },
+    {
+      "table": "prospects",
+      "count": 6,
+      "sha256": "09dcd8e30203683fbdd0d55e0b2dc13820d891b949e61424c14a238d6d31987f"
+    },
+    {
+      "table": "prospect_preferences",
+      "count": 6,
+      "sha256": "16ce320dc64c4ac80b1a1099ce679ab0becadcd4763f90e97b36f170aa752f67"
+    },
+    {
+      "table": "offers",
+      "count": 4,
+      "sha256": "1d38e0258197478142bff97a833c2a8b26a19cc86b6c59ea6195c9a32de7a7fd"
+    },
+    {
+      "table": "visits",
+      "count": 4,
+      "sha256": "3bf236874abe74dbd23123a7b47b807d20a1950c36ceaa942b8ef08f83371d4e"
+    },
+    {
+      "table": "payments",
+      "count": 4,
+      "sha256": "143bbb852ad692b2eaa4458cf343d1668992369953cd1428f3aee714509acade"
+    },
+    {
+      "table": "ledger_entries",
+      "count": 6,
+      "sha256": "606bb99877040c8e600b72b20b002834a580d2e1bc7bad1f517638bcd97cfc8c"
+    },
+    {
+      "table": "ai_runs",
+      "count": 1,
+      "sha256": "44f58eb68d1687035e40cc21bc5aaee099897aa36629949b08240f4d848b525d"
+    },
+    {
+      "table": "property_media",
+      "count": 31,
+      "sha256": "49a53758aefba327b2d7d37e5c59eb98e461fca93bbde047b5a67cda28908163"
+    },
+    {
+      "table": "media_blobs",
+      "count": 2,
+      "sha256": "809652f54bd92719b950f2ed26c2267a7748d4a0d5be2e7cbee9bb27959431f1"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "date": "2026-11-25T02:05:24.975Z",
+  "route": "authenticated dashboard",
+  "viewport": "390x844",
+  "cpuSlowdown": 4,
+  "network": "1.6 Mbps down / 0.75 Mbps up / 150ms emulated latency, through HTTPS relay",
+  "cache": "disabled",
+  "samples": [
+    {
+      "lcpMs": 2964,
+      "ttfbMs": 103,
+      "transferBytes": 227917
+    },
+    {
+      "lcpMs": 2228,
+      "ttfbMs": 103,
+      "transferBytes": 227917
+    },
+    {
+      "lcpMs": 2468,
+      "ttfbMs": 115,
+      "transferBytes": 227917
+    }
+  ],
+  "medianLcpMs": 2468,
+  "targetLcpMs": 2500,
+  "targetMet": true
+}

@@ -1,0 +1,13 @@
+{
+  "date": "2026-11-25T02:10:58.207Z",
+  "status": "PASS",
+  "freshBrowser": true,
+  "fragmentCleared": true,
+  "alejandroCount": 1,
+  "budgetMaxMinor": 800000000,
+  "additionalWidths": [
+    320,
+    390,
+    1920
+  ]
+}

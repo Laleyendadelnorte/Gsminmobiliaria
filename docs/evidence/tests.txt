@@ -1,0 +1,62 @@
+
+> gcm-inmobiliaria@0.1.0 test
+> tsx --test tests/*.test.ts
+
+✔ deterministic parser extracts the V2 acceptance criteria in cents and labels no invented data (16.02452ms)
+✔ ambiguous dollar sign and unnamed prospect require clarification (3.64247ms)
+✔ fallback never interprets an explicit exclusion as a positive feature (0.699989ms)
+✔ fallback rejects publication/payment instructions instead of claiming completion (1.778104ms)
+✔ PII is removed from provider text while named preferences remain (0.989282ms)
+✔ tool schema rejects unauthorized tool arguments and unsafe monetary inputs (2.291585ms)
+✔ complete operational plan invokes actual services, persists private metadata and returns citations (10.001798ms)
+✔ existing exact prospect is reused rather than recreated (1.739849ms)
+✔ ambiguous duplicate contacts do not mutate anything (1.03767ms)
+✔ zero exact matches produces an empty persisted draft and separates partial alternatives (1.583901ms)
+✔ cross currency and unavailable properties never become exact selected matches (1.510679ms)
+✔ invented property codes are rejected before any creation (1.624327ms)
+✔ manual edits are preserved by an explicit before/after proposal (1.320595ms)
+✔ stale version never overwrites a newer draft (4.924357ms)
+✔ confirmed update preserves property order when only theme changes (1.477357ms)
+✔ published offers are not changed by an autonomous tool (0.610503ms)
+✔ ASSISTANT role cannot make mutations (0.777694ms)
+✔ AI route rejects a foreign origin before calling the database (35.667543ms)
+✔ AI route bounds streamed request bodies without trusting content-length (14.485754ms)
+✔ unconfigured provider is honestly deterministic and never called (1.030657ms)
+✔ configured provider uses the forced bounded tool and validates its response (4.135388ms)
+✔ PostgreSQL: atomic persistence, replay, confirmations, isolation and rollback (1822.109484ms)
+✔ slug normalization blocks reserved names and limits DNS labels (3.054861ms)
+✔ ranking enforces currency, explicit mandatory features, location and unknown prices (1.440798ms)
+✔ CSV preview reports per-row errors, duplicate codes and exact integer amounts (16.482982ms)
+✔ webhook signatures validate raw bytes, timestamp, event schema and reject tampering (6.298142ms)
+✔ bounded request reader rejects chunked bodies before accumulating arbitrary input (54.536033ms)
+▶ PostgreSQL integration: authorized inventory → private offer → transactional visit → refund
+  ✔ login, session, origin protection and assistant write denial (193.0413ms)
+  ✔ inventory CRUD, CSV commit and authorized organization filtering (79.670716ms)
+  ✔ prospect idempotency, normalized duplicate detection, currency and zero matches (75.411869ms)
+  ✔ draft creation, slug collision, unknown IDs, client confirmation and version checking (119.27639ms)
+  ✔ offer pages batch selections and galleries with constant query count and unchanged authorization (293.39988ms)
+  ✔ private invitation exchange, redaction, persistent favorites and client isolation (78.62779ms)
+  ✔ concurrent booking has a single winner and rejects caller supplied deposit (50.093983ms)
+  ✔ signed webhook verifies amount and duplicate payloads without duplicate ledger (41.759757ms)
+  ✔ attendance creates refund obligation; concurrent refunds remain idempotent (48.800125ms)
+  ✔ reschedule preserves deposit; cancellation creates refund obligation (123.985173ms)
+  ✔ visit request idempotency and cross-agent property overlap are transactionally enforced (106.207204ms)
+  ✔ gallery updates preserve private storage metadata and reject foreign organization media references (30.905853ms)
+  ✔ withdrawn properties block reservations, revoked and expired invitations fail (100.603828ms)
+  ✔ separate connection observes persisted records; outer transaction rolls back domain writes (38.395748ms)
+✔ PostgreSQL integration: authorized inventory → private offer → transactional visit → refund (1748.405795ms)
+▶ Private media: bounded decoding, physical quota and immediate invitation revocation
+  ✔ Stream without Content-Length rejected at aggregate limit and cancelled (38.975989ms)
+  ✔ Real decoded upload generates variants without enlargement and reserves actual bytes (657.255324ms)
+  ✔ Signed public derivative works; original still requires administrative authentication (11.917337ms)
+  ✔ Already issued image URL fails immediately when invitation is revoked (21.088672ms)
+  ✔ Removing gallery entry cannot erase physical storage quota (20.135427ms)
+✔ Private media: bounded decoding, physical quota and immediate invitation revocation (1511.045975ms)
+ℹ tests 48
+ℹ suites 0
+ℹ pass 48
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 10043.085543

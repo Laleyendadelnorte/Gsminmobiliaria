@@ -1,0 +1,41 @@
+{
+  "date": "2026-11-25",
+  "purpose": "GitHub export verification; no business logic changes",
+  "environment": {
+    "os": "Linux Debian 13",
+    "node": "v24.22.3",
+    "npm": "11.19.1",
+    "freshDependencies": true,
+    "isolatedDatabase": "gcm_export_zrjsnu_gcm_test"
+  },
+  "checks": {
+    "npm ci --no-audit --no-fund": "PASS (397 packages)",
+    "npm run lint": "PASS",
+    "npm run typecheck": "PASS",
+    "npm run db:migrate": "PASS (001_core.sql, 003_media_storage.sql)",
+    "npm test": {
+      "pass": 48,
+      "fail": 0,
+      "skipped": 0,
+      "duration_ms": 9633.719521
+    },
+    "npm run build": "PASS"
+  },
+  "source": {
+    "existingImplementationFilesCompared": 75,
+    "changedImplementationFiles": 0,
+    "manifestValidatedOnTestMachine": true
+  },
+  "limitations": [
+    "No Windows execution",
+    "No Docker execution",
+    "No GitHub Actions run claimed",
+    "No new browser E2E run; previous evidence preserved",
+    "No live LLM key or real payment provider",
+    "GitHub push must be independently verified against remote SHA"
+  ],
+  "installWarnings": [
+    "ESLint 9.39.5 reported deprecated by registry; version preserved for export",
+    "npm warned esbuild postinstall not covered by allowScripts; installation and all subsequent checks passed"
+  ]
+}

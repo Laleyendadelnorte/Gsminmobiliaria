@@ -1,0 +1,50 @@
+{
+  "date": "2026-11-25T02:06:42.276Z",
+  "dataset": {
+    "properties": 10000,
+    "prospects": 10000,
+    "offers": 20000,
+    "offerProperties": 60000
+  },
+  "sessions": 100,
+  "concurrentClients": 100,
+  "requests": 400,
+  "durationSeconds": 9.46,
+  "requestsPerSecond": 42.29,
+  "transport": "loopback HTTP; application and PostgreSQL on same 4GB development machine; no browser/image/LLM/payment traffic",
+  "routes": [
+    {
+      "route": "properties?pageSize=20",
+      "requests": 100,
+      "errors": 0,
+      "p50Ms": 1698,
+      "p95Ms": 2119,
+      "maxMs": 2126
+    },
+    {
+      "route": "prospects?pageSize=20",
+      "requests": 100,
+      "errors": 0,
+      "p50Ms": 1332,
+      "p95Ms": 1738,
+      "maxMs": 2082
+    },
+    {
+      "route": "offers?pageSize=20",
+      "requests": 100,
+      "errors": 0,
+      "p50Ms": 3954,
+      "p95Ms": 4111,
+      "maxMs": 4161
+    },
+    {
+      "route": "dashboard",
+      "requests": 100,
+      "errors": 0,
+      "p50Ms": 2266,
+      "p95Ms": 2680,
+      "maxMs": 2905
+    }
+  ],
+  "allValid": true
+}

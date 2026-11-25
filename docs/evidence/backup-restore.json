@@ -1,0 +1,66 @@
+{
+  "date": "2026-11-25T02:09:57.939Z",
+  "encrypted": true,
+  "status": "PASS",
+  "comparison": [
+    {
+      "table": "properties",
+      "source": 18,
+      "restored": 18,
+      "exactContentMatch": true
+    },
+    {
+      "table": "prospects",
+      "source": 6,
+      "restored": 6,
+      "exactContentMatch": true
+    },
+    {
+      "table": "offers",
+      "source": 4,
+      "restored": 4,
+      "exactContentMatch": true
+    },
+    {
+      "table": "visits",
+      "source": 4,
+      "restored": 4,
+      "exactContentMatch": true
+    },
+    {
+      "table": "payments",
+      "source": 4,
+      "restored": 4,
+      "exactContentMatch": true
+    },
+    {
+      "table": "ledger_entries",
+      "source": 6,
+      "restored": 6,
+      "exactContentMatch": true
+    },
+    {
+      "table": "ai_runs",
+      "source": 1,
+      "restored": 1,
+      "exactContentMatch": true
+    },
+    {
+      "table": "property_media",
+      "source": 31,
+      "restored": 31,
+      "exactContentMatch": true
+    },
+    {
+      "table": "media_blobs",
+      "source": 2,
+      "restored": 2,
+      "exactContentMatch": true
+    }
+  ],
+  "media": {
+    "status": "PASS",
+    "exactFileComparison": true,
+    "fileCount": 10
+  }
+}

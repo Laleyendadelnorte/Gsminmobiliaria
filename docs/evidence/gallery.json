@@ -1,0 +1,15 @@
+{
+  "date": "2026-11-25T02:01:37.930Z",
+  "status": "PASS",
+  "propertyId": "947f88a1-3157-45ee-b05e-d8ef40181594",
+  "uploaded": 2,
+  "retained": 1,
+  "checks": [
+    "real upload",
+    "keyboard reorder",
+    "alt persisted",
+    "remove on save",
+    "stable uploaded id",
+    "authenticated image read"
+  ]
+}

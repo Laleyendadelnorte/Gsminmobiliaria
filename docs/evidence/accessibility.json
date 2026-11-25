@@ -1,0 +1,46 @@
+[
+  {
+    "section": "inicio",
+    "violations": []
+  },
+  {
+    "section": "propiedades",
+    "violations": []
+  },
+  {
+    "section": "prospectos",
+    "violations": []
+  },
+  {
+    "section": "asistente",
+    "violations": []
+  },
+  {
+    "section": "portales",
+    "violations": []
+  },
+  {
+    "section": "visitas",
+    "violations": []
+  },
+  {
+    "section": "pagos",
+    "violations": []
+  },
+  {
+    "section": "actividad",
+    "violations": []
+  },
+  {
+    "section": "configuracion",
+    "violations": []
+  },
+  {
+    "section": "portal-mobile",
+    "violations": []
+  },
+  {
+    "section": "visit-modal",
+    "violations": []
+  }
+]
